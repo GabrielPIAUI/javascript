@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando números</title>
+
+    <style>
+        body {
+            font: normal 18px Arial;
+            text-align: center;
+            background-color: seagreen;
+            
+        }
+
+        h1 {
+            color: yellow;
+        }
+
+        input {
+            font: normal 18px Arial;
+            width: 260px;
+        }
+
+        div #res {
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Calculadora</h1>
+
+        <span>N1</span>
+
+        <input type="number" name="num1" id="num1"><br>
+        <input type="button" value="Calcular Quadrado" onclick="quadrado()">
+        <input type="button" value="Calcular Cubo" onclick="cubo()"><br>
+        <input type="button" value="Calcular Raíz Quadrada" onclick="raiz()"><br>
+        <br>
+        <div id="res">Resultado:</div>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <span>N2</span>
+
+        <input type="number" name="num2" id="num2"><br>
+        <input type="button" value="Somar" onclick="somar()">
+        <input type="button" value="Subtrair" onclick="subtrair()"><br>
+        <input type="button" value="Multiplicar" onclick="multiplicar()">
+        <input type="button" value="Dividir" onclick="dividir()">
+        <div id="res2">Resultado:</div>
+
+
+    <script>
+
+        var num1 = window.document.getElementById('num1')
+        var num2 = window.document.getElementById('num2')
+
+        function quadrado() {
+            var n1 = Number(num1.value)
+            var q = n1 ** 2
+            var res = window.document.getElementById('res')
+            res.innerHTML = `O número ${n1} elevado ao quadrado é: ${q}`
+        }
+
+        function cubo() {
+            var n1 = Number(num1.value)
+            var c = n1 ** 3
+            var res = window.document.getElementById('res')
+            res.innerHTML = `O número ${n1} elevado ao cubo é: ${c}`
+        }
+
+        function raiz() {
+            var n1 = Number(num1.value)
+            var r = n1 ** (1/2)
+            var res = window.document.getElementById('res')
+            res.innerHTML = `A raíz quadrada de ${n1} é: ${r.toFixed(2)}`
+        }
+
+        function somar() {
+            var n1 = Number(num1.value)
+            var n2 = Number(num2.value)
+            var soma = n1 + n2
+            var res = window.document.getElementById('res2')
+            res2.innerHTML = `A soma de ${n1} com ${n2} é: ${soma}`
+        }
+
+        function subtrair() {
+            var n1 = Number(num1.value)
+            var n2 = Number(num2.value)
+            var sub = n1 - n2
+            var res = window.document.getElementById('res2')
+            res2.innerHTML = `A subtração de ${n1} com ${n2} é: ${sub}`
+        }
+
+        function multiplicar() {
+            var n1 = Number(num1.value)
+            var n2 = Number(num2.value)
+            var mul = n1 * n2
+            var res = window.document.getElementById('res2')
+            res2.innerHTML = `A multiplicação de ${n1} com ${n2} é: ${mul}`
+        }
+
+        function dividir() {
+            var n1 = Number(num1.value)
+            var n2 = Number(num2.value)
+            var div = n1 / n2
+            var res = window.document.getElementById('res2')
+            res2.innerHTML = `A divisão de ${n1} por ${n2} é: ${div.toFixed(2)}`
+        }
+
+    </script>
+</body>
+</html>
