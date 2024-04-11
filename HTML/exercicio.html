@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detran - SENAI</title>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+    <span>Velocidade do carro</span>
+    <input type="number" name="velo" id="velo">
+    <span>Km/H</span><br>
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="res">Resultado</div>
+
+    <script>
+
+        function calcular() {
+            var txtv = document.querySelector('input#velo')
+            var res = document.querySelector('div#res')
+            var vel = Number(txtv.value)
+            res.innerHTML = `A sua velocidade atual é de ${vel} Km/H`
+            if (vel > 60) {
+                res.innerHTML += '<p>Você está dirigindo acima da velocidade, MULTADO!</p>'
+            }
+            else {
+                res.innerHTML += '<p>Você está dentro da velocidade permitida</p>'
+            }
+            res.innerHTML += '<p>Dirija sempre com o cinto de segurança</p>'
+        }
+
+    </script>
+</body>
+</html>
